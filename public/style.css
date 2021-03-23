@@ -1,0 +1,34 @@
+/* Navbar style */
+.navbar-brand{
+    float: left;
+    height: 10%;
+    padding: 0;
+}
+
+.navbar{
+    background-color: rgba(56, 95, 56, 0.445) ;
+     opacity:0.8 ;
+    line-height: 20px ;
+    line-height: 20px ;
+}
+.navbar-form-navbar-left{
+ margin-left: 117rem ;
+ margin-top: 2.2rem ;
+}
+.form-control-col-lg-8{
+ width:25rem ;
+ line-height: 20px ;
+} .navbar{
+     background-color: rgba(56, 95, 56, 0.445) ;
+      opacity:0.8 ;
+     line-height: 20px ;
+     line-height: 20px ;
+ }
+.navbar-form-navbar-left{
+  margin-left: 117rem ;
+  margin-top: 2.2rem ;
+}
+.form-control-col-lg-8{
+  width:25rem ;
+  line-height: 20px ;
+}
