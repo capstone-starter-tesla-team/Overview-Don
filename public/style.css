@@ -11,24 +11,28 @@
     line-height: 20px ;
     line-height: 20px ;
 }
+input.prompt{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 210px;
+    height: 40px;
+    background-color:rgba(245,245,245,0.8) ;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
 .navbar-form-navbar-left{
- margin-left: 117rem ;
- margin-top: 2.2rem ;
+ margin-left: 100rem ;
+ margin-top: 2rem ;
 }
 .form-control-col-lg-8{
  width:25rem ;
  line-height: 20px ;
-} .navbar{
+} 
+.navbar{
      background-color: rgba(56, 95, 56, 0.445) ;
       opacity:0.8 ;
      line-height: 20px ;
      line-height: 20px ;
  }
-.navbar-form-navbar-left{
-  margin-left: 117rem ;
-  margin-top: 2.2rem ;
-}
-.form-control-col-lg-8{
-  width:25rem ;
-  line-height: 20px ;
-}
