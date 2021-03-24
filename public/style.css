@@ -36,3 +36,95 @@ input.prompt{
      line-height: 20px ;
      line-height: 20px ;
  }
+ .container{
+  display: inline-block !important;
+    border: 1px solid rgba(56, 95, 56, 0.445) !important;
+    background: linear-gradient(70deg, #e6e6e6, #f7f7f7) !important;
+    margin-bottom: 50px !important;
+    margin-right: 310px !important;
+    margin-top: 90px !important;
+    width:700px !important;
+    padding-top:50px !important;
+    margin-left: 110px !important;
+    
+}
+ .inline1{
+  display: inline-block ;
+  width:50% ;
+  }
+  .readreview{
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    color:black  !important;
+  }
+ .inline2{
+  display: inline-block ;  
+  width:50% ;
+  margin-bottom:2000px ;
+  background: white ;
+  width:30% ;
+  position: absolute ;
+   margin-top:88px ;
+   margin-right:20px ;
+   margin-left:150px ;
+   height: 610px ;
+ }
+ .stars{
+  text-align: center ;
+  margin-top:10px  ;
+}
+.readreview{
+margin-left: 20px ;
+}
+
+.styles{
+  margin-top:10px ;
+  margin-left: 10px ;
+  font-size:20px ;
+}
+
+.style{
+  display: inline-block ;
+  height: 65px ;
+  width: 65px ;
+  border:1px solid ;
+  border-radius: 50% ;
+  margin-top: 20px ;
+  text-align: center  ;
+  
+}
+.circle{
+  display: inline-block ;
+  cursor: pointer ;
+  padding:3px ;
+  flex-wrap: wrap ;
+}
+
+.selectsize{
+  width: 250px ;
+  height:60px ;
+  display: inline-block ;
+  margin-top: 20px ;
+}
+
+.quantity{
+  width: 150px ;
+  height:60px ;
+  display: inline-block ;
+  margin-top: 20px ;
+  margin-left: 30px ;
+}
+
+.price{
+  text-align: center ;
+  margin-top:10px ;
+  font-size:30px ;
+  color:grey ;
+
+}
+
+.addtocart{
+  margin-top:20px ;
+  width: 350px ;
+  height:60px ;
+}

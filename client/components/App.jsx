@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar.jsx'
-import Information from './Information.jsx'
+import Gallery from './Gallery.jsx'
 class App extends Component {
     render() {
         return (
             <div>
                 <Navbar />
-                <Information/>
+                <Gallery/>
             </div>
         )
     }
