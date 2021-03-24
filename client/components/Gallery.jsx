@@ -1,19 +1,51 @@
 import React, { Component } from 'react'
 import Information from './Information.jsx'
-
+import axios from 'axios'
+import Style from './Style.jsx'
 export default class Gallery extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            data:[]
+        }
+    }
+    componentDidMount(){
+        const token = "da973ef82d5b47c1e575b6bb5cbbcd6ae7f8b592"
+        axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles`, {
     
-    render() {
-        jQuery(document).ready(function ($) {
-            $("#myCarousel").carousel({
-              interval: 50000,
-            });
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-type": "Application/json",
+                "Authorization": token
+            }
         })
+            .then((res) => {  
+                res.data.results.map((elem) => {
+                    var styles=  Object.values(elem.photos);  
+                    this.setState({data:styles})
+                 })
+            
+       
+            .catch((err) => {
+                console.log(err)
+            })
+    })
+}
+    render() {
+        const {data}=this.state
+        // jQuery(document).ready(function ($) {
+        //     $("#myCarousel").carousel({
+        //       interval: 50000,
+        //     });
+        // })
         return (
-            <div id="carouselExampleFade" className="inline1" data-ride="carousel">
+            <div>
+            <div className="inline1">
+           
                 <div className="container">
                     <div className="carousel-item active">
-                        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" className="d-block w-100" alt="..." />
+                        <img className="thumbnail" src="https://images.unsplash.com/photo-1499714832275-d6205d94c35d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"/>
+                        {console.log(data)}
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -24,11 +56,14 @@ export default class Gallery extends Component {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="sr-only">Next</span>
                 </a>
+                </div>
+        
                 <div className="inline2">
                     <Information />
+                    <Style />
                     </div>
-                
-            </div>
+                </div>
+           
 
         )
     }

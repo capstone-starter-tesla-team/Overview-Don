@@ -28,10 +28,9 @@ export default class Information extends Component {
     
       }
     render() {
-        console.log(this.state.data)
         return (
             <div className='starsrating'>
-                <div className='star'>
+                <div className='stars'>
                     <StarRatings
                         starDimension="30px"
                         starSpacing="2px"
@@ -39,9 +38,11 @@ export default class Information extends Component {
                         name="rating"
                     />
                     <a className="readreview" >READ ALL REVIEWS</a>
-                    <div className='information'>
+                    <div className='info'>
                         Category <br />
-                        <strong>Jacket</strong><br />
+                        <strong>Jacket</strong>
+                        </div>
+                        <div className="info">
                         <strong>name</strong>
                     </div>
                     <div className="price">$500</div>

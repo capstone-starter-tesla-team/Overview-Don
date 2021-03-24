@@ -30,32 +30,31 @@ input.prompt{
  width:25rem ;
  line-height: 20px ;
 } 
-.navbar{
-     background-color: rgba(56, 95, 56, 0.445) ;
-      opacity:0.8 ;
-     line-height: 20px ;
-     line-height: 20px ;
- }
+
+ body {
+  background: white;
+  color: #514B64;
+}
  .container{
-  display: inline-block !important;
-    border: 1px solid rgba(56, 95, 56, 0.445) !important;
-    background: linear-gradient(70deg, #e6e6e6, #f7f7f7) !important;
-    margin-bottom: 50px !important;
-    margin-right: 310px !important;
-    margin-top: 90px !important;
-    width:700px !important;
-    padding-top:50px !important;
-    margin-left: 110px !important;
+  display: inline-block;
+    border: 1px solid rgba(56, 95, 56, 0.445);
+    background: linear-gradient(70deg, #e6e6e6, #f7f7f7);
+    margin-bottom: 50px;
+    margin-right: 400px;
+    margin-top: 90px;
+    width:700px;
+    padding-top:50px;
+    margin-left: 90px;
     
 }
  .inline1{
   display: inline-block ;
-  width:50% ;
+  width:52% ;
   }
   .readreview{
-    cursor: pointer !important;
-    text-decoration: underline !important;
-    color:black  !important;
+    cursor: pointer;
+    text-decoration: underline;
+    color:black ;
   }
  .inline2{
   display: inline-block ;  
@@ -127,4 +126,7 @@ margin-left: 20px ;
   margin-top:20px ;
   width: 350px ;
   height:60px ;
+}
+.thumbnail {
+  padding: 1 ;
 }

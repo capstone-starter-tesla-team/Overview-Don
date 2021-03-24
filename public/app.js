@@ -36326,6 +36326,14 @@ var _Information = __webpack_require__(59);
 
 var _Information2 = _interopRequireDefault(_Information);
 
+var _axios = __webpack_require__(10);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _Style = __webpack_require__(73);
+
+var _Style2 = _interopRequireDefault(_Style);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36337,56 +36345,91 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Gallery = function (_Component) {
     _inherits(Gallery, _Component);
 
-    function Gallery() {
+    function Gallery(props) {
         _classCallCheck(this, Gallery);
 
-        return _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
+
+        _this.state = {
+            data: []
+        };
+        return _this;
     }
 
     _createClass(Gallery, [{
-        key: 'render',
-        value: function render() {
-            jQuery(document).ready(function ($) {
-                $("#myCarousel").carousel({
-                    interval: 50000
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            var token = "da973ef82d5b47c1e575b6bb5cbbcd6ae7f8b592";
+            _axios2.default.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles', {
+
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-type": "Application/json",
+                    "Authorization": token
+                }
+            }).then(function (res) {
+                res.data.results.map(function (elem) {
+                    var styles = Object.values(elem.photos);
+                    _this2.setState({ data: styles });
+                }).catch(function (err) {
+                    console.log(err);
                 });
             });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var data = this.state.data;
+            // jQuery(document).ready(function ($) {
+            //     $("#myCarousel").carousel({
+            //       interval: 50000,
+            //     });
+            // })
+
             return _react2.default.createElement(
                 'div',
-                { id: 'carouselExampleFade', className: 'inline1', 'data-ride': 'carousel' },
+                null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'container' },
+                    { className: 'inline1' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'carousel-item active' },
-                        _react2.default.createElement('img', { src: 'https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg', className: 'd-block w-100', alt: '...' })
-                    )
-                ),
-                _react2.default.createElement(
-                    'a',
-                    { className: 'carousel-control-prev', href: '#carouselExampleFade', role: 'button', 'data-slide': 'prev' },
-                    _react2.default.createElement('span', { className: 'carousel-control-prev-icon', 'aria-hidden': 'true' }),
+                        { className: 'container' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'carousel-item active' },
+                            _react2.default.createElement('img', { className: 'thumbnail', src: 'https://images.unsplash.com/photo-1499714832275-d6205d94c35d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80' }),
+                            console.log(data)
+                        )
+                    ),
                     _react2.default.createElement(
-                        'span',
-                        { className: 'sr-only' },
-                        'Previous'
-                    )
-                ),
-                _react2.default.createElement(
-                    'a',
-                    { className: 'carousel-control-next', href: '#carouselExampleFade', role: 'button', 'data-slide': 'next' },
-                    _react2.default.createElement('span', { className: 'carousel-control-next-icon', 'aria-hidden': 'true' }),
+                        'a',
+                        { className: 'carousel-control-prev', href: '#carouselExampleFade', role: 'button', 'data-slide': 'prev' },
+                        _react2.default.createElement('span', { className: 'carousel-control-prev-icon', 'aria-hidden': 'true' }),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'sr-only' },
+                            'Previous'
+                        )
+                    ),
                     _react2.default.createElement(
-                        'span',
-                        { className: 'sr-only' },
-                        'Next'
+                        'a',
+                        { className: 'carousel-control-next', href: '#carouselExampleFade', role: 'button', 'data-slide': 'next' },
+                        _react2.default.createElement('span', { className: 'carousel-control-next-icon', 'aria-hidden': 'true' }),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'sr-only' },
+                            'Next'
+                        )
                     )
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'inline2' },
-                    _react2.default.createElement(_Information2.default, null)
+                    _react2.default.createElement(_Information2.default, null),
+                    _react2.default.createElement(_Style2.default, null)
                 )
             );
         }
@@ -37285,13 +37328,12 @@ var Information = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            console.log(this.state.data);
             return _react2.default.createElement(
                 'div',
                 { className: 'starsrating' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'star' },
+                    { className: 'stars' },
                     _react2.default.createElement(_reactStarRatings2.default, {
                         starDimension: '30px',
                         starSpacing: '2px',
@@ -37305,15 +37347,18 @@ var Information = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'information' },
+                        { className: 'info' },
                         'Category ',
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             'strong',
                             null,
                             'Jacket'
-                        ),
-                        _react2.default.createElement('br', null),
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'info' },
                         _react2.default.createElement(
                             'strong',
                             null,
@@ -37880,6 +37925,145 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	}
 }());
 
+
+/***/ }),
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(10);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Style = function (_Component) {
+    _inherits(Style, _Component);
+
+    function Style() {
+        _classCallCheck(this, Style);
+
+        var _this = _possibleConstructorReturn(this, (Style.__proto__ || Object.getPrototypeOf(Style)).call(this));
+
+        _this.state = {
+            style: [],
+            bag: ""
+        };
+        _this.handelchange = _this.handelchange.bind(_this);
+        return _this;
+    }
+
+    _createClass(Style, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            var token = "da973ef82d5b47c1e575b6bb5cbbcd6ae7f8b592";
+            _axios2.default.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles', {
+
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-type": "Application/json",
+                    "Authorization": token
+                }
+            }).then(function (res) {
+                res.data.results.map(function (elem) {
+                    var styles = Object.values(elem.skus);
+                    _this2.setState({ style: styles });
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: 'handelchange',
+        value: function handelchange(e) {
+            this.setState({
+                bag: [{ quantity: e.target.value }]
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var style = this.state.style;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'styles' },
+                _react2.default.createElement(
+                    'select',
+                    { onChange: function onChange(e) {
+                            return _this3.handelchange(e);
+                        }, className: 'selectsize', name: 'cars', id: 'cars' },
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'Select size' },
+                        'Select size'
+                    ),
+                    style.map(function (element, index) {
+                        return _react2.default.createElement(
+                            'option',
+                            { key: index, value: element.size },
+                            element.size
+                        );
+                    })
+                ),
+                _react2.default.createElement(
+                    'select',
+                    { onChange: function onChange(e) {
+                            return _this3.handelchange(e);
+                        }, className: 'quantity', name: 'cars', id: 'cars' },
+                    _react2.default.createElement(
+                        'option',
+                        { value: '1' },
+                        '1'
+                    ),
+                    style.map(function (element, index) {
+                        return _react2.default.createElement(
+                            'option',
+                            { key: index, value: element.quantity },
+                            element.quantity
+                        );
+                    })
+                ),
+                _react2.default.createElement('input', { className: 'addtocart', type: 'submit', value: 'Add to cart    +' })
+            );
+        }
+    }]);
+
+    return Style;
+}(_react.Component);
+
+exports.default = Style;
 
 /***/ })
 /******/ ]);
