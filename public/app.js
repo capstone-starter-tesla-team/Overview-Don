@@ -35438,11 +35438,20 @@ var Information = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Information.__proto__ || Object.getPrototypeOf(Information)).call(this, props));
 
-        _this.state = {};
+        _this.state = {
+            category: []
+        };
         return _this;
     }
 
     _createClass(Information, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            _axios2.default.get("http://159.89.0.200:5000/overview/api/category").then(function (res) {
+                console.log(res, 'hello');
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
