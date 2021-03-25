@@ -1,7 +1,7 @@
 /* Navbar style */
 .navbar-brand{
     float: left;
-    height: 10%;
+    height: 3%;
     padding: 0;
 }
 
@@ -32,19 +32,19 @@ input.prompt{
 } 
 
  body {
-  background: white;
-  color: #514B64;
+  background:white;
+  color: #030202;
 }
  .container{
   display: inline-block;
     border: 1px solid rgba(56, 95, 56, 0.445);
     background: linear-gradient(70deg, #e6e6e6, #f7f7f7);
     margin-bottom: 50px;
-    margin-right: 400px;
+    margin-right: 310px;
     margin-top: 90px;
     width:700px;
     padding-top:50px;
-    margin-left: 90px;
+    margin-left: 110px;
     
 }
  .inline1{
@@ -69,8 +69,9 @@ input.prompt{
    height: 610px ;
  }
  .stars{
-  text-align: center ;
   margin-top:10px  ;
+  color: black;
+  background: white;
 }
 .readreview{
 margin-left: 20px ;
@@ -81,6 +82,7 @@ margin-left: 20px ;
   margin-left: 10px ;
   font-size:20px ;
 }
+
 
 .style{
   display: inline-block ;
@@ -100,33 +102,62 @@ margin-left: 20px ;
 }
 
 .selectsize{
-  width: 250px ;
-  height:60px ;
+  width: 210px ;
+  height:50px ;
   display: inline-block ;
   margin-top: 20px ;
 }
 
 .quantity{
-  width: 150px ;
-  height:60px ;
+  width: 130px ;
+  height:50px ;
   display: inline-block ;
   margin-top: 20px ;
   margin-left: 30px ;
 }
 
 .price{
-  text-align: center ;
   margin-top:10px ;
-  font-size:30px ;
-  color:grey ;
+  font-size:20px ;
+  color:rgb(0, 0, 0) ;
 
 }
 
-.addtocart{
+input.addtocart{
+  background: white;
   margin-top:20px ;
-  width: 350px ;
+  width: 250px ;
   height:60px ;
 }
 .thumbnail {
-  padding: 1 ;
+  padding: 0 ;
+}
+/* .star {
+  visibility:hidden;
+  font-size:30px;
+  cursor:pointer;
+}
+.star:before {
+ content: "\2605";
+ position: absolute;
+ visibility:visible;
+}
+.star:checked:before {
+ content: "\2606";
+ position: absolute;
+}
+.favstar-position{
+  border: 2px solid black;
+  position: relative;
+  position: absolute;
+  margin-left: 75%;
+  width: 60px;
+  height: 60px;
+  margin-top: -15%;
+} */
+img.block{
+  display: inline-block;
+    width:700px;
+    height: 500px;
+   
 }

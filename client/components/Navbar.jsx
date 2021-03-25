@@ -11,6 +11,13 @@ export default class Navbar extends Component {
             <div>
                 <div className="navbar navbar-default">
                     <div className="navbar-headr">
+                          {/* <a className="navbar-brand" href="#">
+                            <img
+                                className="logo"
+                                src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
+                                style={{ width: 130 }}
+                            />
+                        </a> */}
                         <button
                             type="button"
                             className="navbar-toggle"
@@ -21,13 +28,7 @@ export default class Navbar extends Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">
-                            <img
-                                className="logo"
-                                src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
-                                style={{ width: 130 }}
-                            />
-                        </a>
+                      
                     </div>
                     <div className="navbar-collapse collapse navbar-responsive-collapse">
                         <form className="navbar-form-navbar-left">
