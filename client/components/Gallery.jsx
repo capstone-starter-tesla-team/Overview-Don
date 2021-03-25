@@ -11,7 +11,7 @@ export default class Gallery extends Component {
         }
     }
     componentDidMount() {
-        const token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34"
+        const token = "cbcb47e748eeff71b5cc12fcc38443668d908316"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles`, {
 
             headers: {
@@ -64,9 +64,7 @@ export default class Gallery extends Component {
                             <div className="carousel-item">
                                 <img className="block" src={data[5]} alt="Second slide" />
                             </div>
-                            <div className="carousel-item">
-                                <img className="block" src={data[6]} alt="Second slide" />
-                            </div>
+                           
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -39,17 +39,22 @@ input.prompt{
   display: inline-block;
     border: 1px solid rgba(56, 95, 56, 0.445);
     background: linear-gradient(70deg, #e6e6e6, #f7f7f7);
-    margin-bottom: 50px;
-    margin-right: 310px;
-    margin-top: 90px;
-    width:700px;
-    padding-top:50px;
-    margin-left: 110px;
+    margin-bottom:100px;
+    margin-right: 290px;
+    margin-top:10px;
+    width:701px;
+    height: 501px;
+    padding: 0px;
+    margin-left: 70px;
     
+}
+.alert{
+  margin-left:400px;
+  font-size:large;
 }
  .inline1{
   display: inline-block ;
-  width:52% ;
+  width:40% ;
   }
   .readreview{
     cursor: pointer;
@@ -57,15 +62,15 @@ input.prompt{
     color:black ;
   }
  .inline2{
-  display: inline-block ;  
+  
   width:50% ;
-  margin-bottom:2000px ;
+  margin-top:-44% ;
   background: white ;
   width:30% ;
   position: absolute ;
-   margin-top:88px ;
+
    margin-right:20px ;
-   margin-left:150px ;
+   margin-left:62% ;
    height: 610px ;
  }
  .stars{
@@ -132,32 +137,36 @@ input.addtocart{
 .thumbnail {
   padding: 0 ;
 }
-/* .star {
+.star1{
+
   visibility:hidden;
   font-size:30px;
   cursor:pointer;
+  
 }
-.star:before {
+.star1:before {
+  padding:14px;
+  margin-top:-17px;
  content: "\2605";
  position: absolute;
  visibility:visible;
 }
-.star:checked:before {
+.star1:checked:before {
  content: "\2606";
  position: absolute;
 }
 .favstar-position{
   border: 2px solid black;
   position: relative;
-  position: absolute;
+
   margin-left: 75%;
   width: 60px;
   height: 60px;
   margin-top: -15%;
-} */
+
+}
 img.block{
-  display: inline-block;
-    width:700px;
-    height: 500px;
-   
+  width: 700px;
+  height: 500px;
+    padding: 0px;  
 }

@@ -11,7 +11,7 @@ constructor(){
     this.handelchange=this.handelchange.bind(this)
 }
 componentDidMount(){
-    const token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34"
+    const token = "cbcb47e748eeff71b5cc12fcc38443668d908316"
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles`, {
 
         headers: {
@@ -54,7 +54,7 @@ handelchange(e) {
             </select>
             <input className="addtocart" type="submit" value="Add to cart    +" />
             <div className="favstar-position">
-               <input className="star" type="checkbox" title="bookmark page"/>
+               <input className="star1" type="checkbox" title="bookmark page"/>
             </div>
         </div >
         )

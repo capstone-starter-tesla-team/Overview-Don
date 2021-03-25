@@ -36353,7 +36353,7 @@ var Gallery = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34";
+            var token = "cbcb47e748eeff71b5cc12fcc38443668d908316";
             _axios2.default.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles', {
 
                 headers: {
@@ -36422,11 +36422,6 @@ var Gallery = function (_Component) {
                                 'div',
                                 { className: 'carousel-item' },
                                 _react2.default.createElement('img', { className: 'block', src: data[5], alt: 'Second slide' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'carousel-item' },
-                                _react2.default.createElement('img', { className: 'block', src: data[6], alt: 'Second slide' })
                             )
                         ),
                         _react2.default.createElement(
@@ -36530,7 +36525,7 @@ var Information = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34";
+            var token = "cbcb47e748eeff71b5cc12fcc38443668d908316";
             _axios2.default.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003', {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -38056,7 +38051,7 @@ var Style = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34";
+            var token = "cbcb47e748eeff71b5cc12fcc38443668d908316";
             _axios2.default.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles', {
 
                 headers: {
@@ -38130,7 +38125,7 @@ var Style = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'favstar-position' },
-                    _react2.default.createElement('input', { className: 'star', type: 'checkbox', title: 'bookmark page' })
+                    _react2.default.createElement('input', { className: 'star1', type: 'checkbox', title: 'bookmark page' })
                 )
             );
         }

@@ -19,7 +19,7 @@ export default class Information extends Component {
     });
   }
     componentDidMount() {
-        const token = "bcdce18c68547bfd6fca0bc5b11da2c8a63c7e34"
+        const token = "cbcb47e748eeff71b5cc12fcc38443668d908316"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003`, {
             headers: {
                 "Access-Control-Allow-Origin": "*",
