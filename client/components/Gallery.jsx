@@ -8,10 +8,11 @@ export default class Gallery extends Component {
         this.state = {
             data: [],
             images: []
+
         }
     }
     componentDidMount() {
-        const token = "cbcb47e748eeff71b5cc12fcc38443668d908316"
+        const token = "9edba59329638e16ec4547ccb25fed2a8edcf241"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles`, {
 
             headers: {
@@ -23,28 +24,34 @@ export default class Gallery extends Component {
             .then((res) => {
                 res.data.results.map((elem) => {
                     var styles = Object.values(elem.photos);
+                    console.log("aaaaa",styles)
                     var array = []
                     styles.map((element) => {
                         array.push(element.url)
-                        this.setState({ data: array })
+                        this.setState({ data: array ,images:styles})
+
                     })
-
-
                 })
-
             })
             .catch((err) => {
                 console.log(err)
             })
     }
+    changestyle(newphotos) {
+        this.setState({
+            images: newphotos,
+        });
+    }
 
     render() {
-        const { images, data } = this.state
+        
+        const { data, images } = this.state
         return (
-
-            <div className="inline1">
-                <div className="container">
-                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+         
+           <div className="container">
+            <div className="row">
+                <div className="col-md-8">                
+                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-interval="false">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <img className="block" src={data[0]} alt="First slide" />
@@ -64,7 +71,6 @@ export default class Gallery extends Component {
                             <div className="carousel-item">
                                 <img className="block" src={data[5]} alt="Second slide" />
                             </div>
-                           
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -75,13 +81,16 @@ export default class Gallery extends Component {
                             <span className="sr-only">Next</span>
                         </a>
                     </div>
+                   </div>
+                   
+            <div className="col-6 col-md-4">
+         
+                    <Information />
+                    <Style styleimages={(newphotos) => this.changestyle(newphotos)} />
                     </div>
-                    <div className="inline2">
-                        <Information />
-                        <Style />
                     </div>
-                
             </div>
+              
 
 
         )

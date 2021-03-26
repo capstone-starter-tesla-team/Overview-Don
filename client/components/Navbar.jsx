@@ -11,13 +11,7 @@ export default class Navbar extends Component {
             <div>
                 <div className="navbar navbar-default">
                     <div className="navbar-headr">
-                          {/* <a className="navbar-brand" href="#">
-                            <img
-                                className="logo"
-                                src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
-                                style={{ width: 130 }}
-                            />
-                        </a> */}
+                         
                         <button
                             type="button"
                             className="navbar-toggle"
@@ -30,10 +24,11 @@ export default class Navbar extends Component {
                         </button>
                       
                     </div>
+
                     <div className="navbar-collapse collapse navbar-responsive-collapse">
                         <form className="navbar-form-navbar-left">
                             <div className="ui search">
-                                <div className="ui icon input">
+                                <div className="icon ">
                                     <input
                                         className="prompt"
                                         type="text"
@@ -46,6 +41,13 @@ export default class Navbar extends Component {
                             </div>
                         </form>
                     </div>
+                    <a className="navbar-brand" href="#">
+                            <img
+                                className="logo"
+                                src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
+                                style={{ width:80 }}
+                            />
+                        </a>
                 </div>
 
                 <div className="alert">

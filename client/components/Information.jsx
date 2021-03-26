@@ -8,8 +8,8 @@ export default class Information extends Component {
             rating:0,
             name:"",
             category:"",
-            price:""
-           
+            price:"",
+            value: 0,
         }
        
     }
@@ -19,7 +19,7 @@ export default class Information extends Component {
     });
   }
     componentDidMount() {
-        const token = "cbcb47e748eeff71b5cc12fcc38443668d908316"
+        const token = "9edba59329638e16ec4547ccb25fed2a8edcf241"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003`, {
             headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -66,18 +66,17 @@ export default class Information extends Component {
     
       }
     render() {
-        console.log("raitnig",this.state.price)
-        return (
-            <div className='starsrating'>
+        return (            
+            <div  >
                 <div className='stars'>
                     <StarRatings
                     rating={this.state.rating}
-                        starDimension="30px"
+                        starDimension="15px"
                         starSpacing="2px"
                         numberOfStars={5}
                         name="rating"
                     />
-                    <a className="readreview" >READ ALL REVIEWS</a>
+                    <a className="readreview" >  READ ALL REVIEWS</a>
                     <div className='info'>
                         <h4>Category </h4>
                         <h1>Expanded Product</h1>
@@ -91,6 +90,8 @@ export default class Information extends Component {
                 </div>
                
             </div>
+         
+         
         )
     }
 }
