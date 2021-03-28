@@ -19,7 +19,7 @@ export default class Information extends Component {
     });
   }
     componentDidMount() {
-        const token = "9edba59329638e16ec4547ccb25fed2a8edcf241"
+        const token = "f7c4293210902d0d6b19e8a637d428c26496e090"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003`, {
             headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -67,16 +67,23 @@ export default class Information extends Component {
       }
     render() {
         return (            
-            <div  >
+            <div className="row justify-content-start" >
+                <div className="col">
                 <div className='stars'>
-                    <StarRatings
+                    <StarRatings 
                     rating={this.state.rating}
-                        starDimension="15px"
+                        starDimension="16px"
                         starSpacing="2px"
                         numberOfStars={5}
-                        name="rating"
-                    />
-                    <a className="readreview" >  READ ALL REVIEWS</a>
+                        name="rating" />  
+                        <a className="readreview">READ ALL REVIEWS</a>
+                        </div>
+                        </div>
+                     
+                       
+                    
+                   
+                    <div className="w-100"></div>
                     <div className='info'>
                         <h4>Category </h4>
                         <h1>Expanded Product</h1>
@@ -87,7 +94,7 @@ export default class Information extends Component {
                         <strong>{this.state.name}</strong>
                     </div>
                     <div className="price">${this.state.price}</div>
-                </div>
+                
                
             </div>
          

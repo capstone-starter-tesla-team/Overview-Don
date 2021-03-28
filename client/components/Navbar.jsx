@@ -45,14 +45,14 @@ export default class Navbar extends Component {
                             <img
                                 className="logo"
                                 src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
-                                style={{ width:80 }}
+                                style={{ width:100,height:50 }}
                             />
                         </a>
                 </div>
 
                 <div className="alert">
                     <span className="closebtn">&times;</span>
-                    <strong> ANNOUNCEMENT !</strong> SALE / DISCOUNT <strong> OFFER.</strong>
+                    <strong> ANNOUNCEMENT !</strong> SALE / DISCOUNT <strong> OFFER ——</strong><a className="readreview"> NEW PRODUCT HIGHLIGHT</a>
                 </div>
             </div>
         )

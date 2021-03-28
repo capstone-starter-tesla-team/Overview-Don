@@ -40,6 +40,7 @@
     "save": "^2.4.0",
     "sweetalert": "^2.1.2",
     "todomvc-app-css": "^2.3.0",
+    "underscore": "^1.12.1",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
