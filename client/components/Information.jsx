@@ -10,68 +10,21 @@ export default class Information extends Component {
             category:"",
             price:"",
             value: 0,
-        }
-       
+        }   
     }
-  changeRating(newRating,name) {
+  changeRating(newRating) {
     this.setState({
       rating: newRating,
     });
   }
-    componentDidMount() {
-        const token = "f7c4293210902d0d6b19e8a637d428c26496e090"
-        axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003`, {
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-type": "Application/json",
-                "Authorization": token
-            }
-        })
-            .then((res) => {
-                this.setState({ 
-                    category:res.data.category,
-                    name:res.data.name
-                
-                })
-            }).catch((err) => {
-                console.log(err)
-            })
-            axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=11003`, {
-
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Content-type": "Application/json",
-                    "Authorization": token
-                }
-            })
-                .then((res) => {
-                    this.setState({ rating: res.data.results[0].rating })
-                }).catch((err) => {
-                    console.log(err)
-                })
-                axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11003/styles`, {
-                    headers: {
-                        "Access-Control-Allow-Origin": "*",
-                        "Content-type": "Application/json",
-                        "Authorization": token
-                    }
-                })
-                    .then((res) => {
-                        this.setState({ 
-                            price:res.data.results[0].original_price,
-                        })
-                    }).catch((err) => {
-                        console.log(err)
-                    })
-    
-      }
+  
     render() {
         return (            
-            <div className="row justify-content-start" >
-                <div className="col">
+            <div className="row" >
+                <div className="row">
                 <div className='stars'>
                     <StarRatings 
-                    rating={this.state.rating}
+                    rating={this.props.data.rating}
                         starDimension="16px"
                         starSpacing="2px"
                         numberOfStars={5}
@@ -79,23 +32,18 @@ export default class Information extends Component {
                         <a className="readreview">READ ALL REVIEWS</a>
                         </div>
                         </div>
-                     
-                       
-                    
-                   
-                    <div className="w-100"></div>
+                    <div className="col">
                     <div className='info'>
-                        <h4>Category </h4>
-                        <h1>Expanded Product</h1>
-                        <strong>{this.state.category}</strong>
+                        <h4>Category</h4>
+                        <strong>{this.props.data.category}</strong>
                         </div>
                         <div className="info">
                         <h1>Name</h1>
-                        <strong>{this.state.name}</strong>
+                        <strong>{this.props.data.name}</strong>
                     </div>
-                    <div className="price">${this.state.price}</div>
+                    <div className="price">${this.props.data.price}</div>
                 
-               
+               </div>
             </div>
          
          
