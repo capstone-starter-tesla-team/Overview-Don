@@ -160,8 +160,6 @@ change_Id(id){
 
     render() { 
         const {images , img}=this.state
-        var array=[]
-        for(var i=0;i<images.length;i++) array.push(images[i].url)
         return (
             <div>
             <Navbar changeId={this.change_Id}/>

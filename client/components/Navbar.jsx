@@ -7,7 +7,8 @@ export default class Navbar extends Component {
         super(props)
         this.state = {
             search: [],
-            data: []
+            data: [],
+            
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -86,12 +87,12 @@ export default class Navbar extends Component {
                         <img
                             className="logo"
                             src="https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png"
-                            style={{ width: 100, height: 50 }}
+                            style={{ width: 100, height: 60 }}
                         />
                     </a>
                 </div>
 
-                <div className="alert">
+            <div className="alert">
                     <span className="closebtn">&times;</span>
                     <strong> ANNOUNCEMENT !</strong> SALE / DISCOUNT <strong> OFFER ——</strong><a className="readreview"> NEW PRODUCT HIGHLIGHT</a>
                 </div>

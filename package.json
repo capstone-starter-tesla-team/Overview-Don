@@ -40,6 +40,7 @@
     "react-slick": "^0.28.1",
     "react-star-ratings": "^2.3.0",
     "save": "^2.4.0",
+    "semantic-ui-react": "^2.0.3",
     "slick-carousel": "^1.8.1",
     "sweetalert": "^2.1.2",
     "todomvc-app-css": "^2.3.0",

@@ -32880,10 +32880,7 @@ var Gallery = function (_Component) {
                 images = _state.images,
                 img = _state.img;
 
-            var array = [];
-            for (var i = 0; i < images.length; i++) {
-                array.push(images[i].url);
-            }return _react2.default.createElement(
+            return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(_Navbar2.default, { changeId: this.change_Id }),
@@ -37722,6 +37719,7 @@ var Navbar = function (_Component) {
         _this.state = {
             search: [],
             data: []
+
         };
         _this.handleChange = _this.handleChange.bind(_this);
         return _this;
@@ -37842,7 +37840,7 @@ var Navbar = function (_Component) {
                         _react2.default.createElement('img', {
                             className: 'logo',
                             src: 'https://hungamadeal.co.in/wp-content/uploads/2020/06/freesnippingtool.com_capture_20200620213653.png',
-                            style: { width: 100, height: 50 }
+                            style: { width: 100, height: 60 }
                         })
                     )
                 ),
