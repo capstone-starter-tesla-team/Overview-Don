@@ -17,7 +17,8 @@ export default class Gallery extends Component {
             data: [],
             images: [],
             image:[],
-            data_Id:"11003"
+            data_Id:"11003",
+            color:[]
         }
         this.getdata=this.getdata.bind(this)
         this.change_Id=this.change_Id.bind(this)
@@ -109,8 +110,13 @@ change_Id(id){
                             }
                         })
                             .then((res) => {
-                                this.setState({ style: res.data.results })
+                               
+                               
+                                  this.setState({ style: res.data.results })
                             })
+                              
+                               
+                           
                             .catch((err) => {
                                 console.log(err)
                             })
@@ -154,6 +160,7 @@ change_Id(id){
  
 
     render() {
+       
         const {images}=this.state
         console.log(this.state.data_Id)
         var array=[]

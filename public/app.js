@@ -38871,7 +38871,8 @@ var Gallery = function (_Component) {
             data: [],
             images: [],
             image: [],
-            data_Id: "11003"
+            data_Id: "11003",
+            color: []
         };
         _this.getdata = _this.getdata.bind(_this);
         _this.change_Id = _this.change_Id.bind(_this);
@@ -38969,6 +38970,7 @@ var Gallery = function (_Component) {
                     "Authorization": token
                 }
             }).then(function (res) {
+
                 _this2.setState({ style: res.data.results });
             }).catch(function (err) {
                 console.log(err);
@@ -40720,11 +40722,6 @@ var Style = function (_Component) {
             }
 
             this.setState({ range: array });
-        }
-    }, {
-        key: 'chexkcolor',
-        value: function chexkcolor() {
-            this.props.data;
         }
     }, {
         key: 'render',

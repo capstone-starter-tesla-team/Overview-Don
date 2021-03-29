@@ -46,11 +46,10 @@ export default class Style extends Component {
 
         this.setState({ range: array })
     }
-    chexkcolor(){
-        this.props.data
-    }
+   
+      
+    
     render() {
-
         return (
             <div>
                 < div className="styles" >
@@ -58,7 +57,7 @@ export default class Style extends Component {
                 </div>
                 <div className="row">
                     {this.props.data.style.map((element, index) =>
-                        <div key={index} id={element.style_id} style={{ background: element.name }} className="circle" onClick={() => { this.handleStyle(element) }} >
+                        <div key={index} id={element.style_id} style={{background:element.name}} className="circle" onClick={() => { this.handleStyle(element) }} >
                         </div>
 
                     )}
