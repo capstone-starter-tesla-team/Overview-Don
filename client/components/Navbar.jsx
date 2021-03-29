@@ -28,7 +28,7 @@ export default class Navbar extends Component {
         this.setState({ search: storage })
     }
     componentDidMount() {
-        const token = "f7c4293210902d0d6b19e8a637d428c26496e090"
+        const token = "058a6a70fbe5ad44b3190e84600dfada5e4022b7"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products`, {
 
             headers: {

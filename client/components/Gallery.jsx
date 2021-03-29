@@ -14,11 +14,11 @@ export default class Gallery extends Component {
             category:"",
             price:"",
             value: 0,
-            data: [],
             images: [],
             image:[],
             data_Id:"11003",
-            color:[]
+            color:[],
+            img: []
         }
         this.getdata=this.getdata.bind(this)
         this.change_Id=this.change_Id.bind(this)
@@ -26,6 +26,7 @@ export default class Gallery extends Component {
     changestyle(newphotos) {
         this.setState({
             images:newphotos,
+            img: newphotos.map(e=>e.url)
         });
     }
     componentDidMount() {
@@ -36,7 +37,7 @@ change_Id(id){
     this.getdata()
 }
         getdata(){
-        const token = "f7c4293210902d0d6b19e8a637d428c26496e090"
+        const token = "058a6a70fbe5ad44b3190e84600dfada5e4022b7"
         axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${this.state.data_Id}/styles`, {
 
             headers: {
@@ -47,13 +48,10 @@ change_Id(id){
         })
             .then((res) => {
                 res.data.results.map((elem) => {
-                    var styles = Object.values(elem.photos);
-                    const array=[]
-                    this.state.images.map((e)=>{
-                       array.push(e.url) 
-                            })
-                            this.setState({ data:styles ,images:styles,image:array})
-                    })
+                    var styles = Object.values(elem.photos)   
+                             
+                          this.setState({ data:styles,images:styles, img : styles.map(e=>e.url)})          
+                        })       
                 })
             .catch((err) => {
                 console.log(err)
@@ -83,7 +81,8 @@ change_Id(id){
                     }
                 })
                     .then((res) => {
-                        this.setState({ rating: res.data.results[0].rating })
+                             this.setState({ rating: res.data.results[0].rating })       
+                      
                     }).catch((err) => {
                         console.log(err)
                     })
@@ -139,6 +138,7 @@ change_Id(id){
 
     }
   
+  
     handelchange(e) {
         this.setState({
             size: e.target.value,
@@ -154,15 +154,12 @@ change_Id(id){
 
         }
 
-
         this.setState({ range: array })
     }
  
 
-    render() {
-       
-        const {images}=this.state
-        console.log(this.state.data_Id)
+    render() { 
+        const {images , img}=this.state
         var array=[]
         for(var i=0;i<images.length;i++) array.push(images[i].url)
         return (
@@ -174,10 +171,10 @@ change_Id(id){
             <div className="col col-lg-2" id="slider-thumbs">
                     <div className="hide-bullets">
                       {images.map((imge, index) => (
-                        <div key={index} className="col-sm-12">
+                        <div key={index} className="col-sm-12"> 
                           <a
                             className="thumbnail"
-                            id={array[index+ 1]}
+                            id={images[index+ 1]}
                           >
                             <img src={imge.thumbnail_url} className="myimg" />
                           </a>
@@ -190,26 +187,25 @@ change_Id(id){
                 <div className="col-7">     
                         
                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-interval="false">
-                    
                         <div className="carousel-inner">
                     
                             <div className="carousel-item active">
-                            <img className="block" src={array[0]} alt="First slide" />
+                            <img className="block" src={img[0]} alt="First slide" />
                             </div>        
                              <div className="carousel-item">
-                                <img className="block" src={array[1]} alt="Second slide" />
+                                <img className="block" src={img[1]} alt="Second slide" />
                             </div>
                            <div className="carousel-item">
-                                <img className="block" src={array[2]} alt="Second slide" />
+                                <img className="block" src={img[2]} alt="Second slide" />
                             </div>
                             <div className="carousel-item">
-                                <img className="block" src={array[3]} alt="Second slide" />
+                                <img className="block" src={img[3]} alt="Second slide" />
                             </div>
                             <div className="carousel-item">
-                                <img className="block" src={array[4]} alt="Second slide" />
+                                <img className="block" src={img[4]} alt="Second slide" />
                             </div>
                             <div className="carousel-item">
-                                <img className="block" src={array[5]} alt="Second slide" />
+                                <img className="block" src={img[5]} alt="Second slide" />
                             </div> 
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
