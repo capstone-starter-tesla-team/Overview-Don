@@ -4,7 +4,7 @@ const axios = require("axios")
 require("dotenv").config();
 const cors = require("cors")
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3002;
 const path = require("path");
 const compression = require("compression");
 
